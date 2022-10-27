@@ -1,0 +1,48 @@
+<div class="ms-3 w-100 d-flex justify-content-between">
+                            <div class="d-flex position-relative">
+                                <a href="/home" >
+                                    <i class="bi bi-bag-heart-fill fa-2x"></i>
+                                    <h5><span class="grey"><%=file.upvote%></span></h5>
+                                </a>
+                            </div>
+                            <a href="<%= file._id  %>/">
+                                <i class="bi bi-bag-x-fill fa-2x text-danger"></i>
+                                <h5><span class="grey"><%=file.report%></span></h5>
+                            </a>
+                        </div>
+
+<div class="w-100 d-flex">
+    <form   method="POST" action="/upvote" enctype="multipart/form-data"  class="d-inline-flex me-3">
+        <button class="d-block btn">
+            <i class="bi bi-bag-heart-fill fs-3"></i>
+        </button>
+    </form>
+    <form  method="POST" action="/report" enctype="multipart/form-data"  class="d-inline-flex me-3">
+        <button class="d-block btn text-danger">
+            <i class="bi bi-bag-x-fill fs-3 text-danger"></i>
+        </button>
+    </form>
+</div>
+
+<form   method="POST" action="/report" enctype="multipart/form-data"  class="d-inline-flex me-3">
+                                <input type="text" class="d-none text-danger" id="hid" name="_idget" value="<%= file._id  %>">
+                                <input type="text" class="d-none text-danger" id="hid" name="hid" value="<%= url_modd  %>">
+                                <input class="btn text-danger" type="submit" value="report">
+                            </form>
+
+
+if(req.params.sem == "1")
+    {
+        const files = await File.find({sem:"1", scheme:['2015','2019'], subject:req.params.subject, material:req.params.material}).sort({ upvote: -1 }).exec();
+        res.render('textbook', {files, header: toTitleCase(req.params.material),url_modd : url_mod});
+    }
+    else if(req.params.sem == "2")
+    {
+        const files = await File.find({sem:"2", scheme:['2015','2019'], subject:req.params.subject, material:req.params.material}).sort({ upvote: -1 }).exec();
+        res.render('textbook', {files, header: toTitleCase(req.params.material),url_modd : url_mod});
+    }
+    else
+    {
+        const files = await File.find({branch: req.params.branch, sem:req.params.sem, scheme:['2015','2019'], subject:req.params.subject, material:req.params.material}).sort({ upvote: -1 }).exec();
+        res.render('textbook', {files, header: toTitleCase(req.params.material),url_modd : url_mod});
+    }

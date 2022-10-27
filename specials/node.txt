@@ -1,0 +1,166 @@
+# using of body parser
+
+var bodyParser = require('body-parser') 
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({
+    extended:true
+}))
+
+
+
+app.get('/dashboard',(req, res)=>{
+    res.render('dashboard');
+})
+
+app.post('/',(req, res)=>{
+    var regnum = parseInt(req.body.regnum);
+    var password = req.body.password;
+
+    async function member_login()
+    {
+        const result = await Member
+            .find({ regnum: 5, password : password})
+        console.log(result);
+    }
+    member_login()
+
+    return res.redirect('/dashboard',{name: result[0].username});
+})
+
+app.post('/register', (req, res)=>{
+    var regnum = parseInt(req.body.regnum);
+    var username = req.body.username;
+    var email = req.body.email;
+    var password = req.body.password;
+
+    async function new_member()
+    {
+        const member = new Member({
+            regnum : regnum,
+            username: username,
+            email: email,
+            password: password
+        });
+        
+        const result = await member.save();
+        console.log(result);
+    }
+
+    new_member();
+    return res.redirect('/');
+})
+
+<% var msg = data %>
+                    <% if(data!="") { %>
+                        <div class="error"><%= msg %></div>
+                    <% } else { %>
+                        <div class="spacer"></div>
+                    <% } %>
+
+.error{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 50px;
+    background-color:rgb(255, 72, 0);
+    border-radius: 30px;
+    color: rgb(255, 255, 255);
+    margin-top:20px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.spacer{
+    width: 70%;
+    height: 10px;
+    margin-top:20px;
+    margin-bottom: 20px;
+}
+
+
+app.post('/register',(req, res)=>{
+
+    var regnum = parseInt(req.body.regnum);
+    var username = req.body.username;
+    var email = req.body.email;
+    var password = req.body.password;
+
+    async function register_member()
+    {
+        const member = new Member({
+            regnum: regnum,
+            username: username,
+            email: email,
+            password: password
+        })
+
+        const { error } = validateMember(member);
+        const error_pass = error.details[0].message;
+
+        if(error_pass!='"$__" is not allowed'){
+            console.log(error);
+            if (error) return res.render('register',{ data : error_pass});
+        }
+        // // return res.json ({ status: 'error', error: 'invalid Username'})
+        // return res.status(400).send(error.details[0].message);
+
+        const result = await member.save();
+        console.log(result);
+        return res.redirect('/');
+    }
+
+    register_member();
+})
+
+
+function validateMember(member) {
+    const schema = Joi.object({
+        regnum: Joi.number().greater(2).required(),
+
+        username: Joi.string()
+        .alphanum()
+        .min(3)
+        .max(30)
+        .required(),
+
+        email: Joi.string()
+        .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }).required(),
+
+        password: Joi.string()
+        .pattern(new RegExp('^[a-z]{1}[a-z0-9_]{3,13}$')).required(),
+    })
+    return schema.validate(member);
+  }
+
+minlength:5,
+maxlength:255,
+match:/pattern/
+
+category:{
+    type:String,
+    required:true,
+    enum:['web','mobile','network']
+  },
+
+price:{
+  type:Number,
+  required:function(){ return this.isPublished }, 
+  min:10,
+  max:255
+}
+
+custom validators
+
+tags:{
+  type:Array,
+  validate:{
+
+    validator:function(v){
+      return v.length>0;
+        },
+        message:'A course should have at least one tag.'
+    }
+},
+

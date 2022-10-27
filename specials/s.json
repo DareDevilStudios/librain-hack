@@ -1,0 +1,100 @@
+[{
+  "_id": {
+    "$oid": "62c0102255152797e5146064"
+  },
+  "Register_number": 1000,
+  "Username": "trikooo",
+  "email": "thrishakannan25@gmail.com",
+  "password": "$2b$10$XzzswOScYu9amKhO4YwIX.HPr5EDwp2BoGHwb8eoT5SqKC.IjN3hG",
+  "category": "student",
+  "librain_points": 0,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62c0107455152797e5146066"
+  },
+  "Register_number": 1001,
+  "Username": "rinshuu",
+  "email": "1rinshad1@gmail.com",
+  "password": "$2b$10$3L4HpQ6mExTTz3Jlz6Wj5ec/YAfdDtV6ROhwqHxO9yQoEFcR1FP/m",
+  "category": "student",
+  "librain_points": 0,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62da2e531a280b8516144be1"
+  },
+  "Register_number": 1234,
+  "Username": "trikooo",
+  "email": "ameennm41@gmail.com",
+  "password": "$2b$10$rBtIr8cIXBl1Ve9R1SnsuO6aJdL8kxYE5iJgqQhLPXXADd09jWlSG",
+  "category": "student",
+  "librain_points": 0,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62da2e871a280b8516144be4"
+  },
+  "Register_number": 12345,
+  "Username": "ameen",
+  "email": "ameennm014@gmail.com",
+  "password": "$2b$10$qYnPbXT.XLNQ8Qc61Pgx9uJpzHxPfdubB1ssUvdbuoL/fYF39XlBO",
+  "category": "student",
+  "librain_points": 0,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62da2f011a280b8516144beb"
+  },
+  "Register_number": 123,
+  "Username": "thrisha",
+  "email": "8roshan8@gmail.com",
+  "password": "$2b$10$Xx3OvGu6Uq8P6LgVmSuFQ.Tzs14Hz.YGKaqw8V.k0GTpLMX.FeLle",
+  "category": "student",
+  "librain_points": 0,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62da5e1c888890aadb19ed12"
+  },
+  "Register_number": 20420063,
+  "Username": "pavan",
+  "email": "pavan123@gmail.com",
+  "password": "$2b$10$NY/u3z86ae9ZSlNdf63OzOFB8rDi1zndZwk/w41souKlpnJ8m.iqu",
+  "category": "student",
+  "librain_points": 0,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62da69a45d9eb5045968958e"
+  },
+  "Register_number": 20420064,
+  "Username": "thrisha",
+  "email": "thrishakannan55@gmail.com",
+  "password": "$2b$10$n2uQxHNJpRZjJyRC69t4luuCqwoXTbcCrzId8nVomPaRjaKArcTFS",
+  "category": "student",
+  "librain_points": 0,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62e7cd4690ad5607bd9ddc14"
+  },
+  "Register_number": 123456,
+  "Username": "trikooo",
+  "email": "thri@ug.cusat.ac.in",
+  "password": "$2b$10$K4l.0sfIeI.H6/iJiuDGlOaeW6.KTBKKjjmon/TTrrqG0vkw9McOC",
+  "category": "student",
+  "librain_points": 0,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62f5ed996a094ee7f1165018"
+  },
+  "Register_number": 20020860,
+  "Username": "Thrishakannan",
+  "email": "smallbird309@gmail.com",
+  "password": "$2b$10$hiD5cX0GZLZdwxjUdWIOtulQ6Ie6TqQMKM.BWbNe1FpQ3cQxTBW/q",
+  "category": "student",
+  "librain_points": 0,
+  "__v": 0
+}]
